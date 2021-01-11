@@ -1,13 +1,16 @@
-@media (max-width: 760px) {
+@media (max-width: 768px) {
     header nav ul:not(:first-child) {
         display: none;
     }
-    header nav .mobile-nav-icon {
+    header .mobile-nav-icon {
         float: right;
         display: block;
     }
     header .mobile-nav-icon {
         display: inline;
+    }
+    header {
+        font-size: xx-large;
     }
 }
 
