@@ -1,5 +1,4 @@
-@media (orientation: portrait) {
-
+@media (max-width: 760px) {
     header nav ul:not(:first-child) {
         display: none;
     }
