@@ -1,0 +1,40 @@
+header {
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: row;
+}
+
+header nav {
+    padding: 10px;
+    font-size: large;
+    width: 100%;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+header .logo > a{
+    color: red;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: inline;
+}
+
+.mobile-nav-icon {
+    margin: auto;
+    float: right;
+}
+
+.mobile-nav-icon button{
+    height: auto;
+    width: auto;
+}
+
+
+
+
+
