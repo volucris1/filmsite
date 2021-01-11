@@ -1,5 +1,6 @@
 @media (max-width: 768px) {
-    header nav ul:not(:first-child) {
+    /*здесь скрывается лаптоп интерфейс */
+    .laptop-nav ul:not(:first-child) {
         display: none;
     }
     header .mobile-nav-icon {
@@ -9,22 +10,24 @@
     header .mobile-nav-icon {
         display: inline;
     }
-    header {
-        font-size: xx-large;
-    }
+
+
 }
 
 
 header {
-    background-color: var(--bg-color);
     display: flex;
     flex-direction: row;
 }
 
-header nav {
+.laptop-nav {
+    background-color: var(--bg-color);
+    width: 100%;
+    position: fixed;
     padding: 10px;
     font-size: large;
-    width: 100%;
+    height: 24px;
+    z-index: 10;
 }
 
 header a {
@@ -33,10 +36,10 @@ header a {
 }
 
 header .logo > a{
-    color: red;
+    color: #ff0000;
 }
 
-header nav ul {
+.laptop-nav ul {
     list-style-type: none;
     display: inline;
 }
@@ -48,7 +51,35 @@ header nav ul {
     float: right;
     margin-right: 40px;
     display: none;
+    background-color: transparent;
+    color: white;
+    border: none;
+    z-index: 10;
 }
+
+.mobile-nav {
+    position: fixed;
+    background-color: var(--bg-color);
+    width: 100%;
+    height: 210px;
+    top: -100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    transition: top 0.3s ease-in-out;
+}
+
+.mobile-nav ul {
+    padding: 0 25px;
+    margin: 10px 0;
+}
+
+.mobile-nav ul:last-child {
+    margin-bottom: 0 !important;
+}
+
+
+
 
 
 
