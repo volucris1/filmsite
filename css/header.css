@@ -1,4 +1,4 @@
-@media screen and (max-width: 600px) {
+@media (orientation: portrait) {
 
     header nav ul:not(:first-child) {
         display: none;
@@ -6,6 +6,9 @@
     header nav .mobile-nav-icon {
         float: right;
         display: block;
+    }
+    header .mobile-nav-icon {
+        display: inline;
     }
 }
 
@@ -36,15 +39,16 @@ header nav ul {
     display: inline;
 }
 
+
+
 .mobile-nav-icon {
     margin: auto;
     float: right;
+    margin-right: 40px;
+    display: none;
 }
 
-.mobile-nav-icon button{
-    height: auto;
-    width: auto;
-}
+
 
 
 
