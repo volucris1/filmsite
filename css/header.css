@@ -1,3 +1,15 @@
+@media screen and (max-width: 630px) {
+
+    header nav ul:not(:first-child) {
+        display: none;
+    }
+    header nav .mobile-nav-icon {
+        float: right;
+        display: block;
+    }
+}
+
+
 header {
     background-color: var(--bg-color);
     display: flex;
