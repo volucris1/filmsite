@@ -63,7 +63,7 @@ $(document).ready( function (){
             console.log('Свайп влево');
         } else if (touch_move <= -(window_width * 0.15) && touch_start < touch_end && touch_start < (window_width*0.15   )) {
             open_mobile_menu();
-            console.log('Свайп вправо');
+            alert('Свайп вправо');
 
         }
 
