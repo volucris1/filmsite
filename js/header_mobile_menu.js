@@ -57,11 +57,18 @@ $(document).ready( function (){
     document.body.addEventListener('touchend', function (event) {
         touch_end = event.changedTouches[0].pageX;
         touch_move = touch_start - touch_end;
-        if (touch_move >= 100 && touch_start > touch_end) {
+
+        if (touch_start > touch_end) {
             close_mobile_menu();
-        } else if (touch_start < touch_end) {
+            console.log('Свайп влево');
+        } else if (touch_move <= -(window_width * 0.4) && touch_start < touch_end && touch_start < (window_width*0.25   )) {
             open_mobile_menu();
+            console.log('Свайп вправо');
+
         }
+
+        console.log(touch_start ,touch_end, touch_move);
+
     }, false)
 
 })
