@@ -3,14 +3,18 @@
     .laptop-nav ul:not(:first-child) {
         display: none;
     }
+
     header .mobile-nav-icon {
         float: right;
-        display: block;
     }
     header .mobile-nav-icon {
-        display: inline;
+        display: block;
     }
-
+    .logo {
+        display: flex;
+        align-items: baseline;
+        padding: 0;
+    }
 
 }
 
@@ -18,16 +22,20 @@
 header {
     display: flex;
     flex-direction: row;
+    position: fixed;
 }
 
 .laptop-nav {
     background-color: var(--bg-color);
     width: 100%;
-    position: fixed;
     padding: 10px;
     font-size: large;
     height: 24px;
     z-index: 10;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 header a {
@@ -41,21 +49,25 @@ header .logo > a{
 
 .laptop-nav ul {
     list-style-type: none;
-    display: inline;
 }
 
 
 
 .mobile-nav-icon {
-    margin: auto;
-    float: right;
-    margin-right: 40px;
+    float: left;
     display: none;
     background-color: transparent;
     color: white;
     border: none;
     z-index: 10;
+    padding: 4px;
+    font-size: large;
+    transition: transform 0.1s ease-in-out;
 }
+    .mobile-nav-icon, .mobile-nav-icon:focus,
+    .mobile-nav-icon:active {
+        outline: none;
+    }
 
 .mobile-nav {
     position: fixed;
@@ -77,13 +89,3 @@ header .logo > a{
 .mobile-nav ul:last-child {
     margin-bottom: 0 !important;
 }
-
-
-
-
-
-
-
-
-
-

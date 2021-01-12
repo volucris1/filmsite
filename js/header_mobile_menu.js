@@ -4,13 +4,15 @@ $(document).ready( function (){
         if (checked === false) {
             $('.mobile-nav').css({
                 'top':'43px',
-
             })
+
             $('body').css({
                 'overflow':'hidden',
-                'z-index':'-1111111',
             })
 
+            $('.mobile-nav-icon').css({
+                'transform':'rotate(90deg)',
+            })
 
             checked = true;
         } else {
@@ -19,6 +21,9 @@ $(document).ready( function (){
             })
             $('body').css('overflow','auto')
 
+            $('.mobile-nav-icon').css({
+                'transform':'rotate(0deg)',
+            })
             checked = false;
         }
     })
@@ -27,9 +32,25 @@ $(document).ready( function (){
             'top':'-100%',
         })
         $('body').css('overflow','auto')
+        $('.mobile-nav-icon').css({
+            'transform':'rotate(0deg)',
+        })
         checked = false;
-
     })
+    $(document).mouseup(function (event){ // событие клика по веб-документу
+        let div = $("header"); // тут указываем ID элемента
+        if (!div.is(event.target) && div.has(event.target).length === 0) { // и не по его дочерним элементам
+            $('.mobile-nav').css({
+                'top':'-100%',
+            })
+            $('body').css('overflow','auto')
+
+            $('.mobile-nav-icon').css({
+                'transform':'rotate(0deg)',
+            })
+            checked = false;
+        }
+    });
 })
 
 
