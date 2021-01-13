@@ -1,19 +1,19 @@
 $(document).ready( function (){
     let checked = false; //меню скрыто по дефолту
     function open_mobile_menu() {
-            $('.mobile-nav').css({ //мобильное меню выезжает
-                'left':'0',
-            })
+        $('.mobile-nav').css({ //мобильное меню выезжает
+            'left':'0',
+        })
 
-            $('body').css({ //запрещаем скролл страницы
-                'overflow':'hidden',
-            })
+        $('body').css({ //запрещаем скролл страницы
+            'overflow':'hidden',
+        })
 
-            $('.mobile-nav-icon').css({ //переворачиваем иконку
-                'transform':'rotate(90deg)',
-            })
+        $('.mobile-nav-icon').css({ //переворачиваем иконку
+            'transform':'rotate(90deg)',
+        })
 
-            checked = true; //статус мобильного меню - открыто
+        checked = true; //статус мобильного меню - открыто
     }
     function close_mobile_menu() {
         $('.mobile-nav').css({//прячем мобильного меню
@@ -39,19 +39,18 @@ $(document).ready( function (){
     })
 
     $(document).mouseup(function (event){ // событие клика по веб-документу
-        let div = $("header"); // тут указываем ID элемента
+        let div = $("header.html"); // тут указываем ID элемента
         if (!div.is(event.target) && div.has(event.target).length === 0) { // и не по его дочерним элементам
             close_mobile_menu();
         }
     });
-
 
     let touch_start = '';
     let touch_end = '';
     let touch_move = '';
 
     document.body.addEventListener('touchstart', function(event){
-    touch_start = event.changedTouches[0].pageX;
+        touch_start = event.changedTouches[0].pageX;
     }, false)
 
     document.body.addEventListener('touchend', function (event) {
@@ -63,8 +62,6 @@ $(document).ready( function (){
             console.log('Свайп влево');
         } else if (touch_move <= -(window_width * 0.15) && touch_start < touch_end && touch_start < (window_width*0.15   )) {
             open_mobile_menu();
-            alert('Свайп вправо');
-
         }
 
         console.log(touch_start ,touch_end, touch_move);

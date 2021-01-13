@@ -16,16 +16,14 @@
         align-items: baseline;
         padding: 0;
         font-size: x-large;
-
     }
-
 }
 
 
 header {
     display: flex;
     flex-direction: row;
-    position: fixed;
+    height: 44px;
 }
 
 .laptop-nav {
@@ -67,6 +65,7 @@ header .logo > a{
     transition: transform 0.1s ease-in-out;
     font-size: x-large;
 
+
 }
     .mobile-nav-icon, .mobile-nav-icon:focus,
     .mobile-nav-icon:active {
@@ -75,7 +74,8 @@ header .logo > a{
 
 .mobile-nav {
     position: fixed;
-    background-color: var(--bg-color);
+    z-index: 10;
+    background-color: #1c1a1a;
     width: 65%;
     height: 100%;
     top: 43px;
@@ -85,9 +85,14 @@ header .logo > a{
     transition: left 0.3s ease-in-out;
 }
 
-.mobile-nav ul {
-    padding: 0 25px;
-    margin: 10px 0;
+.mobile-nav > ul {
+    padding: 10px 40px;
+    margin: 0;
+    border-bottom: 1px solid #5f645f;
+}
+
+.mobile-nav ul:hover {
+    border-bottom: 1px solid #98a098;
 }
 
 .mobile-nav ul:last-child {

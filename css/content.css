@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
+.aphisha {
+    margin: 25px 40px;
+}
+
+.most_popular {
+    position: relative;
+    height: 400px;
+}
+
+
+.poster_about {
+    position: absolute;
+    box-shadow: inset 500px 0 99px -25px #2a2b2d;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.poster_text {
+    width: 35%;
+}
+
+.poster_about > div {
+    margin: 40px 40px 0;
+}
+
+
+.poster_name {
+    font-family: 'Rubik Mono One', sans-serif;
+}
+
+
+
+.most_popular > img {
+    width: 75%;
+    height: 100%;
+    float: right;
+    display: block;
+    object-fit: cover;
+}
+
+.go_watch {
+    vertical-align: bottom;
+    background-color: #ff6a13;
+    font-family: 'Rubik Mono One', sans-serif;
+    border: none;
+    padding: 10px;
+    color: white;
+    margin: 0 40px;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, text-shadow 0.2s ease;
+    position: absolute;
+    bottom: 40px;
+}
+
+.go_watch:hover {
+    box-shadow: 0 0 10px black;
+    text-shadow: 0 0 4px black;
+}
+
+.go_watch > a {
+}
+
+@media (max-width: 768px) and (min-width: 425px){
+    .poster_about {
+        box-shadow: inset 300px 0 99px -25px #2a2b2d;
+    }
+
+    .poster_text {
+        width: 60%;
+    }
+
+}
+
+@media (max-width: 425px) {
+    .poster_text {
+        display: none;
+    }
+
+    .poster_about {
+        box-shadow: inset 100px 100px 100px -29px #2a2b2d;
+    }
+
+    .most_popular > img {
+        width: 100%;
+    }
+
+    .aphisha {
+        margin: 0;
+    }
+}
