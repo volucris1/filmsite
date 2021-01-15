@@ -65,7 +65,7 @@ $(document).ready( function (){
 
         if (touch_start > touch_end && touch_move >= 25){
             close_mobile_menu();
-        } else if (touch_move <= -(window_width * 0.15) && touch_start < touch_end && touch_start < (window_width*0.15)) {
+        } else if (touch_move <= -(window_width * 0.15) && touch_start < touch_end && touch_start < (window_width*0.20)) {
             open_mobile_menu();
         }
 
