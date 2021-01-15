@@ -1,7 +1,8 @@
 $(document).ready( function (){
-    let checked = false; //меню скрыто по дефолту
+    let checked = false;
     function open_mobile_menu() {
-        $('.mobile-nav').css({ //мобильное меню выезжает
+
+        $('.menu').css({ //мобильное меню выезжает
             'left':'0',
         })
 
@@ -12,11 +13,12 @@ $(document).ready( function (){
         $('.mobile-nav-icon').css({ //переворачиваем иконку
             'transform':'rotate(90deg)',
         })
+        checked = true;
 
-        checked = true; //статус мобильного меню - открыто
+
     }
     function close_mobile_menu() {
-        $('.mobile-nav').css({//прячем мобильного меню
+        $('.menu').css({//прячем мобильного меню
             'left':'-100%',
         })
         $('body').css('overflow','auto')//разрешаем скролл страницы
@@ -24,22 +26,26 @@ $(document).ready( function (){
         $('.mobile-nav-icon').css({//иконку мобильного меню возвращаем в нормальное положение
             'transform':'rotate(0deg)',
         })
-        checked = false; //статус мобильного меню сстановится - закрыто
+        checked = false;
+
     }
 
-    $('.mobile-nav-icon').click( function () {
+    $(document).on('click', '.mobile-nav-icon', function () {
         if (checked === false) { //если меню скрыто, откроем его
             open_mobile_menu();
         } else {
             close_mobile_menu();
+            console.log(checked);
         }
+        return checked;
     })
+
     $(window).resize( function () {//если
         close_mobile_menu();
     })
 
     $(document).mouseup(function (event){ // событие клика по веб-документу
-        let div = $("header.html"); // тут указываем ID элемента
+        let div = $("header"); // тут указываем ID элемента
         if (!div.is(event.target) && div.has(event.target).length === 0) { // и не по его дочерним элементам
             close_mobile_menu();
         }
@@ -57,17 +63,15 @@ $(document).ready( function (){
         touch_end = event.changedTouches[0].pageX;
         touch_move = touch_start - touch_end;
 
-        if (touch_start > touch_end) {
+        if (touch_start > touch_end && touch_move >= (window_width * 0.30) && touch_start >= -(window_width*0.30)) {
             close_mobile_menu();
-            console.log('Свайп влево');
-        } else if (touch_move <= -(window_width * 0.15) && touch_start < touch_end && touch_start < (window_width*0.15   )) {
+        } else if (touch_move <= -(window_width * 0.20) && touch_start < touch_end && touch_start < (window_width*0.30)) {
             open_mobile_menu();
         }
 
         console.log(touch_start ,touch_end, touch_move);
 
     }, false)
-
 })
 
 
