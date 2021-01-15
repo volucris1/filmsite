@@ -63,7 +63,7 @@ $(document).ready( function (){
         touch_end = event.changedTouches[0].pageX;
         touch_move = touch_start - touch_end;
 
-        if (touch_start > touch_end && touch_move >= (window_width * 0.10) && touch_start >= -(window_width*0.10)) {
+        if (touch_start > touch_end && touch_move >= (window_width * 0.5) && touch_start >= -(window_width*0.5)) {
             close_mobile_menu();
         } else if (touch_move <= -(window_width * 0.15) && touch_start < touch_end && touch_start < (window_width*0.15)) {
             open_mobile_menu();
