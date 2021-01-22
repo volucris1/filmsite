@@ -3,19 +3,17 @@ body {
     color: var(--font-color);
 }
 
-
 ::-webkit-scrollbar {
-    width: 5px; /* ширина для вертикального скролла */
+    width: 10px; /* ширина для вертикального скролла */
     height: 5px; /* высота для горизонтального скролла */
-    background-color: #57636d;
+    background-color: #545454;
 }
 
 /* ползунок скроллбара */
 ::-webkit-scrollbar-thumb {
-    background-color: #e3faf9;
-    border-radius: 9em;
+    background-color: #cacaca;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #c3efef;
+    background-color: #d6d6d6;
 }

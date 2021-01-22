@@ -27,7 +27,7 @@ header a {
 
 .logo > a {
     font-size: 1.625em;
-    color: red;
+    color: var(--logo-font-color);
     font-family: 'Russo One', sans-serif;
 }
 
@@ -37,6 +37,14 @@ header .menu > li {
     display: inline;
 }
 
+header .menu li a:hover {
+    color: var(--font-focus);
+}
+
+header .menu > li:after {
+    content: '';
+}
+
 header .menu a {
     color: white;
     font-size: large;
@@ -44,32 +52,36 @@ header .menu a {
 
 @media (max-width: 768px) {
     header {
-        position: fixed;
         width: 100%;
     }
     .menu {
+        position: fixed;
         height: 100%;
-        width: 70%;
-        background-color: #130f0f;
+        width: 75%;
+        background-color: #4c4c4c;
         position: fixed;
         top: 48px;
         left: -100%;
         transition: left 0.4s ease ;
     }
-    .menu li:hover {
-        background-color: #484848;
-    }
+
     header .menu > li {
         display: block;
+        position: relative;
+        overflow: hidden;
         margin: 0;
-        padding: 20px 20px 20px 40px;
-        border-bottom: 1px solid #404040;
+    }
 
+    .menu li > a {
+        display: block;
+        padding: 20px;
+        border-bottom: 1px solid #5d5d5d;
     }
 
     .mobile-nav-icon {
         display: inline;
         position: absolute;
+        margin-left: 10px;
     }
 
     .logo {

@@ -1,91 +1,42 @@
-.aphisha {
-    margin: 25px 40px;
-}
-
-.most_popular {
-    position: relative;
-    height: 400px;
-}
-
-
-.poster_about {
-    position: absolute;
-    box-shadow: inset 500px 0 99px -25px #2a2b2d;
-    height: 100%;
-    width: 100%;
+#aphisha {
     overflow: hidden;
 }
 
-.poster_text {
-    width: 35%;
+.aphisha {
+    background-color: black;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    grid-template-rows: repeat(2, 1fr);
+    padding: 25px;
+    column-gap: 25px;
+    row-gap: 25px;
 }
 
-.poster_about > div {
-    margin: 40px 40px 0;
+.aphisha-item {
+    position: relative;
 }
 
-
-.poster_name {
-    font-family: 'Rubik Mono One', sans-serif;
-}
-
-
-
-.most_popular > img {
-    width: 75%;
-    height: 100%;
-    float: right;
-    display: block;
-    object-fit: cover;
-}
-
-.go_watch {
-    vertical-align: bottom;
-    background-color: #ff6a13;
-    font-family: 'Rubik Mono One', sans-serif;
-    border: none;
-    padding: 10px;
-    color: white;
-    margin: 0 40px;
-    cursor: pointer;
-    transition: box-shadow 0.2s ease, text-shadow 0.2s ease;
+.aphisha-item-name {
+    z-index: 100;
     position: absolute;
-    bottom: 40px;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: linear-gradient(0deg, rgb(93 93 93) 15%, rgb(255 255 255 / 0%));
 }
 
-.go_watch:hover {
-    box-shadow: 0 0 10px black;
-    text-shadow: 0 0 4px black;
+.aphisha-item-name > h2 {
+    text-align: center;
+    width: 100%;
 }
 
-.go_watch > a {
-}
-
-@media (max-width: 768px) and (min-width: 425px){
-    .poster_about {
-        box-shadow: inset 300px 0 99px -25px #2a2b2d;
-    }
-
-    .poster_text {
-        width: 60%;
-    }
-
-}
-
-@media (max-width: 425px) {
-    .poster_text {
-        display: none;
-    }
-
-    .poster_about {
-        box-shadow: inset 100px 100px 100px -29px #2a2b2d;
-    }
-
-    .most_popular > img {
-        width: 100%;
-    }
-
-    .aphisha {
-        margin: 0;
-    }
+.aphisha > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

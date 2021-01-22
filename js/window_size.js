@@ -18,4 +18,5 @@ $(document).ready( function () {
         get_window_size();
         console.log(window_width, window_height);
     })
+
 })
